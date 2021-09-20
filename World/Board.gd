@@ -1,6 +1,7 @@
 extends Node2D
 
 var board_matrix = []
+var separation_value = -75
 
 #Dictionary containing different states of a tile
 const board_data = {
@@ -19,7 +20,7 @@ func create_board_matrix():
 		for y in range(10):
 			board_matrix[x].append(board_data.duplicate())
 			#Assigning global position for card to take in
-			board_matrix[x][y].card_position = Vector2(x * 50, y * 50)
+			board_matrix[x][y].card_position = Vector2(x * separation_value + 350, y * separation_value + 350)
 
 func _ready():
 	create_board_matrix()

@@ -6,5 +6,3 @@ const stats = {
 	movement = 2,
 }
 
-func _ready():
-	global_position = Board.board_matrix[0][1].card_position
