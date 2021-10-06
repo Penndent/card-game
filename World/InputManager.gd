@@ -21,7 +21,7 @@ func decide_input(tile_id):
 
 #Queries
 func take_input(tile_id, state):
-	if tileArray != null:
+	if requiredTiles != null:
 		if tileArray.size() >= requiredTiles:
 			return
 	tileArray.push_back(tile_id)
