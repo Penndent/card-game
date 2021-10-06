@@ -24,4 +24,4 @@ func link_node_to_board_vector(board_position, node):
 
 func link_node_to_board(x, y, node):
 	Board.board_matrix[x][y].unit = node
-	#print(Board.board_matrix[x][y].unit)
+	print(Board.board_matrix[x][y].unit)
