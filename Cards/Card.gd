@@ -1,5 +1,6 @@
 extends Node2D
 
+
 const stats = {
 	health = 10,
 	attack_dmg = 5,
@@ -7,3 +8,5 @@ const stats = {
 	pass_thru = false,
 }
 
+func get_new_unit():
+	return stats.duplicate()

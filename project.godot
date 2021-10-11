@@ -8,6 +8,46 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Executor_Base",
+"language": "GDScript",
+"path": "res://Input_Code/Executor_Base.gd"
+}, {
+"base": "Reference",
+"class": "Executor_Cancel",
+"language": "GDScript",
+"path": "res://Input_Code/Executor_Cancel.gd"
+}, {
+"base": "Reference",
+"class": "Executor_Status",
+"language": "GDScript",
+"path": "res://Input_Code/Executor_Status.gd"
+}, {
+"base": "Reference",
+"class": "Input_Scheme_Base",
+"language": "GDScript",
+"path": "res://Input_Code/Management/Input_Scheme_Base.gd"
+}, {
+"base": "Reference",
+"class": "Input_Scheme_Start",
+"language": "GDScript",
+"path": "res://Input_Code/Input_Scheme_Start.gd"
+}, {
+"base": "Reference",
+"class": "Input_Scheme_Unit",
+"language": "GDScript",
+"path": "res://Input_Code/Input_Scheme_Unit.gd"
+} ]
+_global_script_class_icons={
+"Executor_Base": "",
+"Executor_Cancel": "",
+"Executor_Status": "",
+"Input_Scheme_Base": "",
+"Input_Scheme_Start": "",
+"Input_Scheme_Unit": ""
+}
+
 [application]
 
 config/name="Card Game"
