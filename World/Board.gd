@@ -15,6 +15,8 @@ const board_data = {
 	passable = true,
 	king_zone = false,
 	card_position = Vector2(0,0), 
+	unit_exists = false, #IS there a unit on piece 
+	unit = null, #Link to specific Unit
 	on = true, #For Pentagonal Shape
 }
 
@@ -40,8 +42,6 @@ func create_board_matrix():
 		
 
 func create_pentagon_matrix():
-	
-	
 	pass
 
 func _ready():

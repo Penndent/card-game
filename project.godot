@@ -46,12 +46,15 @@ _global_script_class_icons={
 "Input_Scheme_Base": "",
 "Input_Scheme_Start": "",
 "Input_Scheme_Unit": ""
+_global_script_classes=[  ]
+_global_script_class_icons={
+
 }
 
 [application]
 
 config/name="Card Game"
-run/main_scene="res://World/Board.tscn"
+run/main_scene="res://World/World.tscn"
 config/icon="res://icon.png"
 
 [autoload]
