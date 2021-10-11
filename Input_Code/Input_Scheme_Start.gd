@@ -1,4 +1,4 @@
-extends "res://Input_Code/Management/Input_Scheme_Base.gd"
+extends "res://Input_Code/Input_Scheme_Base.gd"
 
 class_name Input_Scheme_Start
 

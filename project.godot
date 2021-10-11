@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Reference",
 "class": "Input_Scheme_Base",
 "language": "GDScript",
-"path": "res://Input_Code/Management/Input_Scheme_Base.gd"
+"path": "res://Input_Code/Input_Scheme_Base.gd"
 }, {
 "base": "Reference",
 "class": "Input_Scheme_Start",

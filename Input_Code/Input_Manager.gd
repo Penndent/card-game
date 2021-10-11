@@ -1,4 +1,4 @@
-const Input_Scheme_Start = preload("res://Input_Code/Input_Scheme_Start.gd")
+var Input_Scheme_Start = load("res://Input_Code/Input_Scheme_Start.gd")
 
 var active_input_scheme
 
@@ -14,7 +14,7 @@ func process_input(trigger_action_info):
 
 	for exe in scheme_out.executor_list:
 		exe.execute()
-	#Detect if an executor class is used, end of scheme
+
 	if scheme_out.next_scheme != null:
 		active_input_scheme = scheme_out.next_scheme
 	else: 
