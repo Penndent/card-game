@@ -46,7 +46,5 @@ func create_pentagon_matrix():
 
 func _ready():
 	create_board_matrix()
-	#OH YEAH BABY IT WORKS
-	print(board_matrix[0][1].card_position)
 
 

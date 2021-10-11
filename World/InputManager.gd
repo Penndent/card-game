@@ -15,7 +15,7 @@ func decide_input(tile_id):
 	match state:
 		MOVE:
 			requiredTiles = 2
-			move(tile_id)
+			move()
 		ATTACK:
 			pass
 		ABILITY:
@@ -27,17 +27,21 @@ func take_input(tile_id):
 		if tileArray.size() >= requiredTiles:
 			return
 	tileArray.push_back(tile_id)
-	requiredTiles += 1
 
-func move(event_position):
+func move():
 	if check_tiles() != true:
 		return
 	
 	#Board Data changes
-	Board.baord_matrix[tileArray[1]].unit = Board.board_matrix[tileArray[0]].unit
-	Board.baord_matrix[tileArray[1]].unit_exists = true
-	Board.baord_matrix[tileArray[0]].unit_exists = false
-	Board.board_matrix[tileArray[0]].unit = null
+	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit = Board.board_matrix[tileArray[0].x][tileArray[0].y].unit
+	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit_exists = true
+	Board.board_matrix[tileArray[0].x][tileArray[0].y].unit_exists = false
+	
+	#Weird Pointer stuff
+	Board.board_matrix[tileArray[0].x][tileArray[0].y].unit = ''
+	
+	
+	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit.global_position = Board.board_matrix[tileArray[1].x][tileArray[1].y].card_position
 	
 	#TODO Move Cards Around
 	tileArray.clear()

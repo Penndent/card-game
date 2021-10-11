@@ -14,9 +14,6 @@ script = ExtResource( 1 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
@@ -26,3 +23,6 @@ script = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Card" parent="Units" instance=ExtResource( 4 )]
+
+[node name="Camera2D" type="Camera2D" parent="Units/Card"]
+current = true
