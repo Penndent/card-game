@@ -17,7 +17,8 @@ func decide_input(tile_id):
 			requiredTiles = 2
 			move()
 		ATTACK:
-			pass
+			requiredTiles = 2
+			attack()
 		ABILITY:
 			pass
 
@@ -32,18 +33,38 @@ func move():
 	if check_tiles() != true:
 		return
 	
-	var moving_unit = Board.board_matrix[tileArray[0].x][tileArray[0].y].unit
+	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
+	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
+	
 	#Board Data changes
-	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit = moving_unit
-	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit_exists = true
-	Board.board_matrix[tileArray[0].x][tileArray[0].y].unit_exists = false
+	sTile.unit = fTile.unit
+	sTile.unit_exists = true
+	fTile.unit_exists = false
 	
-	Board.board_matrix[tileArray[0].x][tileArray[0].y].unit = null
+	fTile.unit = null
+	sTile.unit.global_position = sTile.card_position
+	sTile.unit.update_self()
 	
-	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit.global_position = Board.board_matrix[tileArray[1].x][tileArray[1].y].card_position
-	
-	#TODO Move Cards Around
 	tileArray.clear()
+
+func attack():
+	if check_tiles() != true:
+		return
+	
+	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
+	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
+	
+	if fTile.unit_exists == false || sTile.unit_exists == false:
+		#TODO Return some sort of "you done wrong, do it again"
+		return
+	
+	var player_dmg = fTile.unit.stats.attack_dmg
+	var enemy_health = sTile.unit.stats.health
+	
+	enemy_health -= player_dmg
+	sTile.unit.check_death()
+	
+	#TODO send s
 
 #Checks required Tiles and if its good, it clears query
 func check_tiles():
