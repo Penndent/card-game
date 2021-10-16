@@ -32,14 +32,13 @@ func move():
 	if check_tiles() != true:
 		return
 	
+	var moving_unit = Board.board_matrix[tileArray[0].x][tileArray[0].y].unit
 	#Board Data changes
-	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit = Board.board_matrix[tileArray[0].x][tileArray[0].y].unit
+	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit = moving_unit
 	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit_exists = true
 	Board.board_matrix[tileArray[0].x][tileArray[0].y].unit_exists = false
 	
-	#Weird Pointer stuff
-	Board.board_matrix[tileArray[0].x][tileArray[0].y].unit = ''
-	
+	Board.board_matrix[tileArray[0].x][tileArray[0].y].unit = null
 	
 	Board.board_matrix[tileArray[1].x][tileArray[1].y].unit.global_position = Board.board_matrix[tileArray[1].x][tileArray[1].y].card_position
 	

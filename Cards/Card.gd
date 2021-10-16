@@ -7,8 +7,11 @@ onready var input_node = get_node("/root/World/InputManager")
 func _ready():
 	connect("send_self", root_node, "link_node_to_board")
 	send_self(0,0)
-	input_node.decide_input(Vector2(0,0))
-	input_node.decide_input(Vector2(5,5))
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_left"):
+		input_node.decide_input(Vector2(0,0))
+		input_node.decide_input(Vector2(5,5))
 
 const stats = {
 	health = 10,
