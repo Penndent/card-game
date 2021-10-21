@@ -10,6 +10,9 @@ var state = MOVE
 var tileArray = [] #Tiles used for specific Action
 var requiredTiles = null
 
+func change_state(new_state):
+	state = new_state
+
 func decide_input(tile_id):
 	take_input(tile_id)
 	match state:

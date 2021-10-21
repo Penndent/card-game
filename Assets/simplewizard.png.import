@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/card-sprite-temp.jpeg-a10c342a405d73664de2b47e12b6a5a6.stex"
+path="res://.import/simplewizard.png-d264afd743cf79a82d20e5c433837feb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/card-sprite-temp.jpeg"
-dest_files=[ "res://.import/card-sprite-temp.jpeg-a10c342a405d73664de2b47e12b6a5a6.stex" ]
+source_file="res://Assets/simplewizard.png"
+dest_files=[ "res://.import/simplewizard.png-d264afd743cf79a82d20e5c433837feb.stex" ]
 
 [params]
 
