@@ -44,4 +44,4 @@ position = Vector2( -70, 210 )
 position = Vector2( 140, 210 )
 
 [node name="Wizard" parent="." instance=ExtResource( 11 )]
-position = Vector2( -140, 210 )
+position = Vector2( -147.143, 210 )
