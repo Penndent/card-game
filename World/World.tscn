@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://World/World.gd" type="Script" id=1]
 [ext_resource path="res://World/Units.gd" type="Script" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Cards/CardDetection.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/simple board.png" type="Texture" id=6]
+[ext_resource path="res://Knight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Archer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Witch.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sowrdsmen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Wizard.tscn" type="PackedScene" id=11]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -25,3 +30,18 @@ current = true
 
 [node name="simple board" type="Sprite" parent="."]
 texture = ExtResource( 6 )
+
+[node name="Knight" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 210 )
+
+[node name="Witch" parent="." instance=ExtResource( 9 )]
+position = Vector2( 70, 210 )
+
+[node name="archer" parent="." instance=ExtResource( 8 )]
+position = Vector2( -70, 210 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 140, 210 )
+
+[node name="Wizard" parent="." instance=ExtResource( 11 )]
+position = Vector2( -140, 210 )

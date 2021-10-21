@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/simplewitch.png-0880cfffdadded83c3233b0ae0f72a06.stex"
+path="res://.import/simple archer .png-d5a09df3ed29a762edea6e1df6c8ee4b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/simplewitch.png"
-dest_files=[ "res://.import/simplewitch.png-0880cfffdadded83c3233b0ae0f72a06.stex" ]
+source_file="res://Characters-Units/simple archer .png"
+dest_files=[ "res://.import/simple archer .png-d5a09df3ed29a762edea6e1df6c8ee4b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
