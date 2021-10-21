@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PickCard.mp3-9cc3337789e21b869b37e0f7b5e19c7c.mp3str"
+
+[deps]
+
+source_file="res://music_sounds/PickCard.mp3"
+dest_files=[ "res://.import/PickCard.mp3-9cc3337789e21b869b37e0f7b5e19c7c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

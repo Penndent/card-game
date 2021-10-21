@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/KeepKOTH.mp3-baab1c8980ff67c560cc2643e105b2a7.mp3str"
+
+[deps]
+
+source_file="res://music_sounds/KeepKOTH.mp3"
+dest_files=[ "res://.import/KeepKOTH.mp3-baab1c8980ff67c560cc2643e105b2a7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
