@@ -6,7 +6,7 @@
 [ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Cards/CardDetection.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/board.jpeg" type="Texture" id=6]
-[ext_resource path="res://Assets/simplewitch.png" type="Texture" id=7]
+[ext_resource path="res://Input_Code/Clickable Map.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,7 +28,4 @@ script = ExtResource( 2 )
 [node name="Camera2D" type="Camera2D" parent="Units/Card"]
 current = true
 
-[node name="simplewitch" type="Sprite" parent="."]
-position = Vector2( 476, 257 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
+[node name="Clickable Map" parent="." instance=ExtResource( 7 )]
