@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+
+[sub_resource type="VisualShader" id=1]
+code = "shader_type spatial;
+render_mode specular_schlick_ggx;
+
+
+
+
+void vertex() {
+// Output:0
+
+}
+
+void fragment() {
+// Output:0
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[node name="Menu" type="Control"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -110.875
+margin_top = 245.722
+margin_right = -110.875
+margin_bottom = 245.722
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 121.0
+margin_top = -297.0
+margin_right = 177.0
+margin_bottom = -253.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start Button" type="Button" parent="VBoxContainer"]
+margin_right = 56.0
+margin_bottom = 20.0
+text = "Start"
+
+[node name="Quit Button" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 56.0
+margin_bottom = 44.0
+text = "Quit"
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_Start_Button_pressed"]
