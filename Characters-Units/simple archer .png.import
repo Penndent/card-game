@@ -20,7 +20,11 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
+<<<<<<< Updated upstream
 flags/filter=false
+=======
+flags/filter=true
+>>>>>>> Stashed changes
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
