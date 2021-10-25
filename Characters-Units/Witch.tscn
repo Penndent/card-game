@@ -1,18 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Characters-Units/simplewizard.png" type="Texture" id=1]
-[ext_resource path="res://Characters-Units/simplewizard.gd" type="Script" id=2]
+[ext_resource path="res://Characters-Units/simplewitch.png" type="Texture" id=1]
+[ext_resource path="res://Characters-Units/Witch.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[node name="Wizard" type="KinematicBody2D"]
+[node name="Witch" type="KinematicBody2D"]
+scale = Vector2( 0.25, 0.25 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="simplewizard" type="Sprite" parent="."]
+[node name="simplewitch" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
