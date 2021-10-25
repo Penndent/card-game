@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+scale = Vector2( 0.25, 0.25 )
 __meta__ = {
 "_edit_group_": true
 }

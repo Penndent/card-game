@@ -33,15 +33,19 @@ texture = ExtResource( 6 )
 
 [node name="Knight" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, 210 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="Witch" parent="." instance=ExtResource( 9 )]
 position = Vector2( 70, 210 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="archer" parent="." instance=ExtResource( 8 )]
 position = Vector2( -70, 210 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( 140, 210 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="Wizard" parent="." instance=ExtResource( 11 )]
-position = Vector2( -147.143, 210 )
+position = Vector2( -140.016, 210 )
+scale = Vector2( 0.25, 0.25 )
