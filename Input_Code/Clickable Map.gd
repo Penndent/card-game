@@ -9,7 +9,7 @@ func _ready():
 
 func instance_button(instance_position, x, y):
 	var Ind_Button = ind_button.instance()
-	get_parent().call_deferred('add_child', Ind_Button)
+	call_deferred('add_child', Ind_Button)
 	var subtract = 65/2
 	Ind_Button.set_global_position(instance_position - (Vector2(subtract,subtract)))
 	

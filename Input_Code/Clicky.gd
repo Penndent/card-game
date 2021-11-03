@@ -1,7 +1,7 @@
 extends Button
 
 var tile_id 
-
+onready var input_manager = get_parent().get_parent()
 
 func _on_Clicky_pressed():
-	print(tile_id)
+	input_manager.decide_input(tile_id)
