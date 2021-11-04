@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -8,10 +8,18 @@ extends KinematicBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-	pass
-#rr
+#	pass
+
+
+func _on_Start_Button_pressed():
+	get_tree().change_scene()
+
+func _on_Quit_Button_pressed():
+	get_tree().quit()
+	

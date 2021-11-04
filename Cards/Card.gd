@@ -4,6 +4,9 @@ signal send_self(x, y, itself)
 onready var root_node = get_node("/root/World")
 onready var input_node = get_node("/root/World/InputManager")
 
+var prev_board_position
+var curr_board_position
+
 func _ready():
 	connect("send_self", root_node, "link_node_to_board")
 	send_self(0,0)
@@ -19,6 +22,15 @@ const stats = {
 	movement = 2,
 	pass_thru = false,
 }
+
+func check_death():
+	if stats.health == 0:
+		curr_board_position.unit_exists = false
+		queue_free()
+
+func update_self(x, y):
+	prev_board_position = curr_board_position
+	curr_board_position = Board.board_matrix[x][y]
 
 func get_new_unit():
 	return stats.duplicate()
