@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/simple archer .png-d5a09df3ed29a762edea6e1df6c8ee4b.stex"
+path="res://.import/New Piskel (1).png-455d053a5dd3782cefa45e50b71224d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters-Units/simple archer .png"
-dest_files=[ "res://.import/simple archer .png-d5a09df3ed29a762edea6e1df6c8ee4b.stex" ]
+source_file="res://Menu/New Piskel (1).png"
+dest_files=[ "res://.import/New Piskel (1).png-455d053a5dd3782cefa45e50b71224d8.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0
