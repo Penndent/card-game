@@ -3,7 +3,8 @@ extends Node
 enum {
 	MOVE,
 	ATTACK,
-	ABILITY
+	ABILITY,
+	ENDTURN
 }
 
 var state = MOVE
@@ -24,6 +25,9 @@ func decide_input(tile_id):
 			attack()
 		ABILITY:
 			pass
+		ENDTURN:
+			requiredTiles = 0
+			#ADD ENDTURN FUNCTION
 
 #Queries
 func take_input(tile_id):
@@ -67,6 +71,7 @@ func attack():
 	enemy_health -= player_dmg
 	sTile.unit.check_death()
 	
+	tileArray.clear()
 	#TODO send s
 
 #Checks required Tiles and if its good, it clears query
