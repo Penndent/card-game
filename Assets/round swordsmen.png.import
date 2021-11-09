@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/simplesordsmen.png-6774e8f6ace3f4099001e02be8c64683.stex"
+path="res://.import/round swordsmen.png-6ace54c35a8a581c74e58d73dda3f115.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters-Units/simplesordsmen.png"
-dest_files=[ "res://.import/simplesordsmen.png-6774e8f6ace3f4099001e02be8c64683.stex" ]
+source_file="res://Assets/round swordsmen.png"
+dest_files=[ "res://.import/round swordsmen.png-6ace54c35a8a581c74e58d73dda3f115.stex" ]
 
 [params]
 

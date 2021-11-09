@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/simplewizard.png-62d81f70654a9358c0c65fe8e93c00d6.stex"
+path="res://.import/round wizard.png-4fb279a6b372fc860a21b5a1d3bdf537.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters-Units/simplewizard.png"
-dest_files=[ "res://.import/simplewizard.png-62d81f70654a9358c0c65fe8e93c00d6.stex" ]
+source_file="res://Assets/round wizard.png"
+dest_files=[ "res://.import/round wizard.png-4fb279a6b372fc860a21b5a1d3bdf537.stex" ]
 
 [params]
 
