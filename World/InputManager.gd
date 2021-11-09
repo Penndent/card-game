@@ -7,15 +7,17 @@ enum {
 	ENDTURN
 }
 
-var state = NONE
+var state = MOVE
 var tileArray = [] #Tiles used for specific Action
 var requiredTiles = null
 
 func change_state(new_state):
 	state = new_state
+	print(state)
 
 func decide_input(tile_id):
 	take_input(tile_id)
+	print(state)
 	match state:
 		MOVE:
 			requiredTiles = 2
@@ -39,11 +41,16 @@ func take_input(tile_id):
 func move():
 	if check_tiles() != true:
 		return
-	
+
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
 	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
 	
-	#Board Data changes
+	if fTile.unit_exists == false:
+		#TODO Visual Teller
+		tileArray.clear()
+		return
+	
+	
 	sTile.unit = fTile.unit
 	sTile.unit_exists = true
 	fTile.unit_exists = false
