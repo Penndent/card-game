@@ -7,7 +7,7 @@ enum {
 	ENDTURN
 }
 
-var state = MOVE
+var state = NONE
 var tileArray = [] #Tiles used for specific Action
 var requiredTiles = null
 
@@ -50,7 +50,7 @@ func move():
 	
 	fTile.unit = null
 	sTile.unit.global_position = sTile.card_position
-	sTile.unit.update_self()
+	sTile.unit.update_self(tileArray[1].x, tileArray[1].y)
 	
 	tileArray.clear()
 
