@@ -27,7 +27,7 @@ margin_bottom = 14.0
 [node name="Background" type="NinePatchRect" parent="HBoxContainer/ButtonMove"]
 margin_bottom = 14.0
 texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 100, 40 )
+region_rect = Rect2( 0, 0, 120, 40 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ButtonMove"]
 margin_bottom = 14.0
