@@ -1,6 +1,5 @@
 extends KinematicBody2D
-var health
-var travel
+
 
 # Declare member variables here. Examples:
 # var a = 2
