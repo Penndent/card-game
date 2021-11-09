@@ -3,10 +3,11 @@ extends Node
 enum {
 	MOVE,
 	ATTACK,
-	ABILITY
+	ABILITY,
+	NONE
 }
 
-var state = MOVE
+var state = NONE
 var tileArray = [] #Tiles used for specific Action
 var requiredTiles = null
 
@@ -23,6 +24,8 @@ func decide_input(tile_id):
 			requiredTiles = 2
 			attack()
 		ABILITY:
+			pass
+		NONE:
 			pass
 
 #Queries
