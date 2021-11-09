@@ -18,7 +18,8 @@ func _ready():
 
 
 func _on_Start_Button_pressed():
-	get_tree().change_scene()
+	pass
+	#get_tree().change_scene()
 
 func _on_Quit_Button_pressed():
 	get_tree().quit()

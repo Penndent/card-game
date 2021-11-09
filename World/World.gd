@@ -20,6 +20,7 @@ func link_node_to_board_vector(board_position, node):
 	var x = board_position.x
 	var y = board_position.y
 	Board.board_matrix[x][y].unit = node
+	Board.board_matrix[x][y].unit_exists = true
 	#print(Board.board_matrix[x][y].unit)
 
 func link_node_to_board(x, y, node):
