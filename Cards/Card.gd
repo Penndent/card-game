@@ -29,6 +29,12 @@ func check_death():
 		curr_board_position.unit_exists = false
 		queue_free()
 
+func add_victory():
+	if stats.player == 1:
+		root_node.player_one_points += 1
+	else:
+		root_node.player_two_points += 1
+
 func update_self(x, y):
 	prev_board_position = curr_board_position
 	curr_board_position = Board.board_matrix[x][y]

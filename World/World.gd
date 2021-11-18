@@ -3,7 +3,11 @@ extends Node2D
 var Basic_card = preload("res://Cards/Card.tscn")
 onready var board = Board.board_matrix
 
+var player_one_points = 0
+var player_two_points = 0
+
 var turn = 1
+var player_turn = 1
 
 
 func _ready():
@@ -12,6 +16,18 @@ func _ready():
 			put_card(board[x][y].card_position)
 	#link_node_to_board(0, 2, $TempSprite)
 
+#Expects Input from GUI to change Turn!
+func end_turn():
+	turn += 1
+	if player_turn > 1:
+		player_turn -= 1
+	else:
+		player_turn += 1
+	
+	#USE FOR SINGLE POINT VICTORY ZONE
+	var vic = Board.victory_zone
+	if Board.board_matrix[vic.x][vic.y].unit_exists == true:
+		Board.board_matrix[vic.x][vic.y].unit.add_victory
 
 
 

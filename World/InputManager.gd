@@ -6,7 +6,7 @@ enum {
 	MOVE,
 	ATTACK,
 	ABILITY,
-	NONE
+	NONE,
 }
 
 var state = MOVE
@@ -15,6 +15,7 @@ var requiredTiles = null
 
 func change_state(new_state):
 	state = new_state
+	tileArray.clear()
 	print(state)
 
 func decide_input(tile_id):
@@ -40,25 +41,14 @@ func take_input(tile_id):
 	tileArray.push_back(tile_id)
 
 func move():
-	if check_tiles() != true:
+	if input_conditions():
 		return
-
+	 
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
 	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
 	
 	var fTileVector = tileArray[0]
 	var sTileVector = tileArray[1]
-	
-	if fTile.unit_exists == false:
-		#TODO Visual Teller
-		tileArray.clear()
-		return
-	
-	if abs((fTileVector.x - sTileVector.x) + (fTileVector.y - sTileVector.y)) > fTile.unit.stats.movement:
-		tileArray.clear()
-		print('too much movement!')
-		#print(fTile.x)
-		return
 	
 	
 	sTile.unit = fTile.unit
@@ -72,7 +62,7 @@ func move():
 	tileArray.clear()
 
 func attack():
-	if check_tiles() != true:
+	if input_conditions():
 		return
 	
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
@@ -88,7 +78,7 @@ func attack():
 	enemy_health -= player_dmg
 	sTile.unit.check_death()
 	
-	#TODO send s
+	tileArray.clear()
 
 #Checks required Tiles and if its good, it clears query
 func check_tiles():
@@ -96,3 +86,29 @@ func check_tiles():
 		return false
 	requiredTiles = null
 	return true
+
+#For 2 Tile Actions
+func input_conditions():
+	if check_tiles() != true:
+		return true
+	
+	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
+	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
+	
+	var fTileVector = tileArray[0]
+	var sTileVector = tileArray[1]
+	
+	if fTile.unit_exists == false:
+		#TODO Visual Teller
+		tileArray.clear()
+		return true
+	
+	if abs((fTileVector.x - sTileVector.x) + (fTileVector.y - sTileVector.y)) > fTile.unit.stats.movement:
+		tileArray.clear()
+		print('too much movement!')
+		#print(fTile.x)
+		return true
+	
+	if world.player_turn != fTile.unit.stats.player:
+		print('not player')
+		return true
