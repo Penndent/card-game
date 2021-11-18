@@ -41,10 +41,12 @@ func create_board_matrix():
 			
 		
 
-func create_pentagon_matrix():
-	pass
-
+func create_victory_zone():
+	var one_point = Vector2(board_width / 2, board_length / 2)
+	board_matrix[one_point.x][one_point.y].king_zone = true
 func _ready():
 	create_board_matrix()
+	create_victory_zone()
+	
 
 

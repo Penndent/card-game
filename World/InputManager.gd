@@ -1,5 +1,7 @@
 extends Node
 
+onready var world = get_node('/root/World')
+
 enum {
 	MOVE,
 	ATTACK,
@@ -44,9 +46,18 @@ func move():
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
 	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
 	
+	var fTileVector = tileArray[0]
+	var sTileVector = tileArray[1]
+	
 	if fTile.unit_exists == false:
 		#TODO Visual Teller
 		tileArray.clear()
+		return
+	
+	if abs((fTileVector.x - sTileVector.x) + (fTileVector.y - sTileVector.y)) > fTile.unit.stats.movement:
+		tileArray.clear()
+		print('too much movement!')
+		#print(fTile.x)
 		return
 	
 	

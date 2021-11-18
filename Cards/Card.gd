@@ -19,8 +19,9 @@ func _physics_process(delta):
 const stats = {
 	health = 10,
 	attack_dmg = 5,
-	movement = 2,
+	movement = 3,
 	pass_thru = false,
+	player = 1,
 }
 
 func check_death():

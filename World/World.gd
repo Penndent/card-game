@@ -3,11 +3,17 @@ extends Node2D
 var Basic_card = preload("res://Cards/Card.tscn")
 onready var board = Board.board_matrix
 
+var turn = 1
+
+
 func _ready():
 	for x in board.size():
 		for y in board[x].size():
 			put_card(board[x][y].card_position)
 	#link_node_to_board(0, 2, $TempSprite)
+
+
+
 
 func put_card(card_pos):
 	var basic_card = Basic_card.instance()
@@ -25,5 +31,6 @@ func link_node_to_board_vector(board_position, node):
 
 func link_node_to_board(x, y, node):
 	Board.board_matrix[x][y].unit = node
+	Board.board_matrix[x][y].unit_exists = true
 	node.global_position = Board.board_matrix[x][y].card_position
 	print(Board.board_matrix[x][y].card_position)
