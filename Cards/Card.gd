@@ -19,14 +19,21 @@ func _physics_process(delta):
 const stats = {
 	health = 10,
 	attack_dmg = 5,
-	movement = 2,
+	movement = 3,
 	pass_thru = false,
+	player = 1,
 }
 
 func check_death():
 	if stats.health == 0:
 		curr_board_position.unit_exists = false
 		queue_free()
+
+func add_victory():
+	if stats.player == 1:
+		root_node.player_one_points += 1
+	else:
+		root_node.player_two_points += 1
 
 func update_self(x, y):
 	prev_board_position = curr_board_position

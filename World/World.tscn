@@ -4,7 +4,7 @@
 [ext_resource path="res://World/Units.gd" type="Script" id=2]
 [ext_resource path="res://World/InputManager.gd" type="Script" id=3]
 [ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=4]
-[ext_resource path="res://World/GUI.gd" type="Script" id=5]
+[ext_resource path="res://World/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/board.jpeg" type="Texture" id=6]
 [ext_resource path="res://Input_Code/Clickable Map.tscn" type="PackedScene" id=7]
 
@@ -26,65 +26,7 @@ script = ExtResource( 2 )
 [node name="Card" parent="Units" instance=ExtResource( 4 )]
 
 [node name="Camera2D" type="Camera2D" parent="Units/Card"]
+offset = Vector2( 0, 40 )
 current = true
 
-[node name="GUI" type="CanvasLayer" parent="."]
-script = ExtResource( 5 )
-
-[node name="Move" type="ColorRect" parent="GUI"]
-margin_left = -169.861
-margin_top = 235.451
-margin_right = -119.861
-margin_bottom = 295.451
-color = Color( 0.027451, 0.109804, 0.980392, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="GUI/Move"]
-margin_right = 13.0
-margin_bottom = 29.0
-rect_scale = Vector2( 3.76, 2.04 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Attack" type="ColorRect" parent="GUI"]
-margin_left = -49.0452
-margin_top = 237.339
-margin_right = 0.954834
-margin_bottom = 297.339
-color = Color( 0.952941, 0.0392157, 0.0392157, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="GUI/Attack"]
-margin_right = 13.0
-margin_bottom = 29.0
-rect_scale = Vector2( 3.76, 2.04 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Ability" type="ColorRect" parent="GUI"]
-margin_left = 88.7605
-margin_top = 235.451
-margin_right = 138.76
-margin_bottom = 295.451
-color = Color( 0.882353, 0.027451, 0.980392, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="GUI/Ability"]
-margin_right = 13.0
-margin_bottom = 29.0
-rect_scale = Vector2( 3.76, 2.04 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="GUI/Move/Button" to="GUI" method="_on_move_Button_pressed"]
+[node name="GUI" parent="." instance=ExtResource( 5 )]
