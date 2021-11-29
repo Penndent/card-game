@@ -3,8 +3,6 @@
 [ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Menu/New Piskel (1).png" type="Texture" id=2]
 
-
-
 [sub_resource type="VisualShader" id=1]
 code = "shader_type spatial;
 render_mode specular_schlick_ggx;
@@ -54,21 +52,27 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 512.0
 margin_top = -317.0
-margin_right = 568.0
-margin_bottom = -273.0
+margin_right = 569.0
+margin_bottom = -249.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Start Button" type="Button" parent="VBoxContainer"]
-margin_right = 56.0
+margin_right = 57.0
 margin_bottom = 20.0
 text = "Start"
 
 [node name="Quit Button" type="Button" parent="VBoxContainer"]
 margin_top = 24.0
-margin_right = 56.0
+margin_right = 57.0
 margin_bottom = 44.0
 text = "Quit"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 57.0
+margin_bottom = 68.0
+text = "Credits"
 
 [connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_Start_Button_pressed"]
