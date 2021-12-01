@@ -6,7 +6,7 @@ enum {
 	MOVE,
 	ATTACK,
 	ABILITY,
-	NONE,
+	ENDTURN
 }
 
 var state = MOVE
@@ -30,8 +30,9 @@ func decide_input(tile_id):
 			attack()
 		ABILITY:
 			pass
-		NONE:
-			pass
+		ENDTURN:
+			requiredTiles = 0
+			#ADD ENDTURN FUNCTION
 
 #Queries
 func take_input(tile_id):
@@ -82,6 +83,7 @@ func attack():
 	
 	fTile.unit.command_list.push_front('attack')
 	tileArray.clear()
+	#TODO send s
 
 #Checks required Tiles and if its good, it clears query
 func check_tiles():

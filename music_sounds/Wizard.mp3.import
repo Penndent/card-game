@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Wizard.mp3-d7c97de4b0fea0fe5b871d1d6f9e4fb5.mp3str"
+
+[deps]
+
+source_file="res://music_sounds/Wizard.mp3"
+dest_files=[ "res://.import/Wizard.mp3-d7c97de4b0fea0fe5b871d1d6f9e4fb5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
