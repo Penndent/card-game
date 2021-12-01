@@ -43,11 +43,6 @@ _global_script_classes=[ {
 "class": "Input_Scheme_Unit",
 "language": "GDScript",
 "path": "res://Input_Code/Input_Scheme_Unit.gd"
-}, {
-"base": "Reference",
-"class": "Input_Scheme_Unit_Tile",
-"language": "GDScript",
-"path": "res://Input_Code/Input_Scheme_Unit_Tile.gd"
 } ]
 _global_script_class_icons={
 "Executor_Base": "",
@@ -56,8 +51,7 @@ _global_script_class_icons={
 "Executor_Status": "",
 "Input_Scheme_Base": "",
 "Input_Scheme_Start": "",
-"Input_Scheme_Unit": "",
-"Input_Scheme_Unit_Tile": ""
+"Input_Scheme_Unit": ""
 }
 
 [application]
@@ -69,29 +63,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Board="*res://World/Board.gd"
-
-[importer_defaults]
-
-texture={
-"compress/bptc_ldr": 0,
-"compress/hdr_mode": 0,
-"compress/lossy_quality": 0.7,
-"compress/mode": 0,
-"compress/normal_map": 0,
-"detect_3d": false,
-"flags/anisotropic": false,
-"flags/filter": false,
-"flags/mipmaps": false,
-"flags/repeat": 0,
-"flags/srgb": 2,
-"process/HDR_as_SRGB": false,
-"process/fix_alpha_border": true,
-"process/invert_color": false,
-"process/premult_alpha": false,
-"size_limit": 0,
-"stream": false,
-"svg/scale": 1.0
-}
 
 [physics]
 
