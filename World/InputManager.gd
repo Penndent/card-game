@@ -41,7 +41,7 @@ func take_input(tile_id):
 	tileArray.push_back(tile_id)
 
 func move():
-	if input_conditions():
+	if input_conditions('move'):
 		return
 	 
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
@@ -50,7 +50,9 @@ func move():
 	var fTileVector = tileArray[0]
 	var sTileVector = tileArray[1]
 	
+	fTile.unit.command_list.push_front('move')
 	
+	# CHANGES WHERE UNIT EXISTS
 	sTile.unit = fTile.unit
 	sTile.unit_exists = true
 	fTile.unit_exists = false
@@ -62,7 +64,7 @@ func move():
 	tileArray.clear()
 
 func attack():
-	if input_conditions():
+	if input_conditions('attack'):
 		return
 	
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
@@ -78,6 +80,7 @@ func attack():
 	enemy_health -= player_dmg
 	sTile.unit.check_death()
 	
+	fTile.unit.command_list.push_front('attack')
 	tileArray.clear()
 
 #Checks required Tiles and if its good, it clears query
@@ -88,7 +91,7 @@ func check_tiles():
 	return true
 
 #For 2 Tile Actions
-func input_conditions():
+func input_conditions(dec):
 	if check_tiles() != true:
 		return true
 	
@@ -103,12 +106,17 @@ func input_conditions():
 		tileArray.clear()
 		return true
 	
+	if fTile == sTile:
+		return true
+	
 	if abs((fTileVector.x - sTileVector.x) + (fTileVector.y - sTileVector.y)) > fTile.unit.stats.movement:
 		tileArray.clear()
 		print('too much movement!')
-		#print(fTile.x)
 		return true
 	
 	if world.player_turn != fTile.unit.stats.player:
 		print('not player')
 		return true
+	
+	if fTile.unit.command_list.has(dec):
+		return

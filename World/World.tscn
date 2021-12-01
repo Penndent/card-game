@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/World.gd" type="Script" id=1]
 [ext_resource path="res://World/Units.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://World/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/board.jpeg" type="Texture" id=6]
 [ext_resource path="res://Input_Code/Clickable Map.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Players.gd" type="Script" id=8]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,3 +31,6 @@ offset = Vector2( 0, 40 )
 current = true
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+
+[node name="Players" type="Node2D" parent="."]
+script = ExtResource( 8 )

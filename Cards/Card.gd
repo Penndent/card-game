@@ -1,14 +1,20 @@
 extends Node2D
 
 signal send_self(x, y, itself)
+signal send_card_to_player(itself)
 onready var root_node = get_node("/root/World")
 onready var input_node = get_node("/root/World/InputManager")
+onready var player_node = get_node('/root/World/Players')
 
 var prev_board_position
 var curr_board_position
 
+var command_list = []
+
+#TODO SEND UNIT TO PLAYER NODE
 func _ready():
 	connect("send_self", root_node, "link_node_to_board")
+	
 	send_self(0,0)
 
 func _physics_process(delta):
@@ -42,5 +48,6 @@ func update_self(x, y):
 func get_new_unit():
 	return stats.duplicate()
 func send_self(x, y):
+	#print('sent ' + str(x) + ' ' + str(y))
 	emit_signal("send_self", x, y, self)
 

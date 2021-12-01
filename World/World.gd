@@ -2,6 +2,7 @@ extends Node2D
 
 var Basic_card = preload("res://Cards/Card.tscn")
 onready var board = Board.board_matrix
+onready var player_node = $Players
 
 var player_one_points = 0
 var player_two_points = 0
@@ -21,8 +22,12 @@ func end_turn():
 	turn += 1
 	if player_turn > 1:
 		player_turn -= 1
+		for x in player_node.sUnits.values():
+			x.command_list.clear()
 	else:
 		player_turn += 1
+		for x in player_node.fUnits.values():
+			x.command_list.clear()
 	
 	#USE FOR SINGLE POINT VICTORY ZONE
 	var vic = Board.victory_zone
