@@ -43,6 +43,11 @@ _global_script_classes=[ {
 "class": "Input_Scheme_Unit",
 "language": "GDScript",
 "path": "res://Input_Code/Input_Scheme_Unit.gd"
+}, {
+"base": "Reference",
+"class": "Input_Scheme_Unit_Tile",
+"language": "GDScript",
+"path": "res://Input_Code/Input_Scheme_Unit_Tile.gd"
 } ]
 _global_script_class_icons={
 "Executor_Base": "",
@@ -51,7 +56,8 @@ _global_script_class_icons={
 "Executor_Status": "",
 "Input_Scheme_Base": "",
 "Input_Scheme_Start": "",
-"Input_Scheme_Unit": ""
+"Input_Scheme_Unit": "",
+"Input_Scheme_Unit_Tile": ""
 }
 
 [application]

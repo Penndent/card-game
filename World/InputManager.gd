@@ -16,11 +16,11 @@ var requiredTiles = null
 func change_state(new_state):
 	state = new_state
 	tileArray.clear()
-	print(state)
+	#print(state)
 
 func decide_input(tile_id):
 	take_input(tile_id)
-	print(state)
+	#print(state)
 	match state:
 		MOVE:
 			requiredTiles = 2
@@ -121,4 +121,4 @@ func input_conditions(dec):
 		return true
 	
 	if fTile.unit.command_list.has(dec):
-		return
+		return true
