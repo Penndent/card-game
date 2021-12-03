@@ -61,6 +61,26 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="End Turn" type="ColorRect" parent="."]
+margin_left = 879.286
+margin_top = 520.668
+margin_right = 929.285
+margin_bottom = 580.668
+color = Color( 0.576471, 0.921569, 0.556863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="End Turn"]
+margin_right = 13.0
+margin_bottom = 29.0
+rect_scale = Vector2( 3.76, 2.04 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Move/Button" to="." method="_on_move_Button_pressed"]
 [connection signal="pressed" from="Attack/Button" to="." method="_on_attack_Button_pressed"]
 [connection signal="pressed" from="Ability/Button" to="." method="_on_ability_Button_pressed"]
+[connection signal="pressed" from="End Turn/Button" to="." method="_on_end_turn_pressed"]

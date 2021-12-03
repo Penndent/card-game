@@ -14,7 +14,8 @@ var command_list = []
 #TODO SEND UNIT TO PLAYER NODE
 func _ready():
 	connect("send_self", root_node, "link_node_to_board")
-	
+	#print(self)
+	player_node.fUnits['1'] = self
 	send_self(0,0)
 
 func _physics_process(delta):

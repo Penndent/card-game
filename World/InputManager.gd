@@ -121,4 +121,5 @@ func input_conditions(dec):
 		return true
 	
 	if fTile.unit.command_list.has(dec):
+		print('command_lsit')
 		return true
