@@ -23,7 +23,7 @@ func _physics_process(delta):
 		input_node.decide_input(Vector2(0,0))
 		input_node.decide_input(Vector2(5,5))
 
-const stats = {
+var stats = {
 	health = 10,
 	attack_dmg = 5,
 	movement = 3,
