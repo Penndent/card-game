@@ -59,8 +59,8 @@ func end_turn():
 func put_card(card_pos):
 	var basic_card = Basic_card.instance()
 	#self.add_child(basic_card)
-	basic_card.global_position = card_pos
-
+	basic_card.global_position = card_pos;
+	
 
 #TODO implement signals to link these things
 func link_node_to_board_vector(board_position, node):
