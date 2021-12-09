@@ -1,7 +1,9 @@
 extends Node2D
 
 var Basic_card = preload("res://Cards/Card.tscn")
+onready var inputManager = get_node('/root/World/InputManager')
 onready var board = Board.board_matrix
+onready var player_node = $Players
 
 var player_one_points = 0
 var player_two_points = 0
@@ -19,10 +21,19 @@ func _ready():
 #Expects Input from GUI to change Turn!
 func end_turn():
 	turn += 1
+	inputManager.tileArray.clear()
 	if player_turn > 1:
 		player_turn -= 1
+		for x in player_node.sUnits.values():
+			x.command_list.clear()
 	else:
 		player_turn += 1
+		for x in player_node.fUnits.values():
+			print(x)
+			print(x.command_list)
+			x.command_list.clear()
+			print(x.command_list)
+	print(str(player_turn))
 	
 	#USE FOR SINGLE POINT VICTORY ZONE
 	var vic = Board.victory_zone

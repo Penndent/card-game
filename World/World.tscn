@@ -7,8 +7,8 @@
 [ext_resource path="res://World/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/board.jpeg" type="Texture" id=6]
 [ext_resource path="res://Input_Code/Clickable Map.tscn" type="PackedScene" id=7]
-[ext_resource path="res://CameraHolder.gd" type="Script" id=8]
-[ext_resource path="res://World/TileHighlighter.gd" type="Script" id=9]
+[ext_resource path="res://World/Players.gd" type="Script" id=8]
+[ext_resource path="res://CameraHolder.gd" type="Script" id=9]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,11 +30,13 @@ script = ExtResource( 2 )
 [node name="GUI" parent="." instance=ExtResource( 5 )]
 
 [node name="Camera" type="Node2D" parent="."]
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 offset = Vector2( 0, 40 )
 current = true
 
-[node name="TileHighlighter" type="Node2D" parent="."]
-script = ExtResource( 9 )
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+
+[node name="Players" type="Node2D" parent="."]
+script = ExtResource( 8 )
