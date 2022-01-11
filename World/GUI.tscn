@@ -80,6 +80,19 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ItemList" type="ItemList" parent="."]
+visible = false
+margin_left = 134.593
+margin_top = 191.108
+margin_right = 904.593
+margin_bottom = 331.108
+auto_height = true
+max_columns = 5
+icon_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Move/Button" to="." method="_on_move_Button_pressed"]
 [connection signal="pressed" from="Attack/Button" to="." method="_on_attack_Button_pressed"]
 [connection signal="pressed" from="Ability/Button" to="." method="_on_ability_Button_pressed"]

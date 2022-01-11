@@ -10,12 +10,14 @@ const card_index = {
 	'knight': knight_card,
 	'witch': witch_card
 }
+const card_ref = ['archer', 'knight', 'witch']
 
 
 onready var inputManager = get_node('/root/World/InputManager')
 onready var board = Board.board_matrix
 onready var player_node = $Players
 onready var unit_node = $Units
+onready var gui = $GUI
 
 signal end_turn
 
@@ -27,12 +29,13 @@ var player_turn = 1
 
 
 func _ready():
+	randomize()
 	for x in board.size():
 		for y in board[x].size():
 			put_card(board[x][y].card_position)
 	#link_node_to_board(0, 2, $TempSprite)
 	connect('end_turn', unit_node, 'check_conditions_for_turn')
-
+	put_initial_cards()
 #Expects Input from GUI to change Turn!
 func end_turn():
 	turn += 1
@@ -78,4 +81,25 @@ func link_node_to_board(x, y, node):
 
 func create_random_pool():
 	var pool = []
-	card_index[1]
+	for x in 3:
+		var card_pool = card_ref.duplicate()
+		card_pool.shuffle()
+		var cardinPool = card_pool.pop_back()
+		pool.append(cardinPool)
+	
+	return pool
+
+func put_initial_cards():
+	var cards = create_random_pool()
+	for x in 3:
+		var Card = card_index[cards[x]].instance()
+		unit_node.add_child(Card)
+		player_node.fUnits[x] = Card
+		Card.send_self(x + 3, 0)
+	cards = create_random_pool()
+	for x in 3:
+		var Card = card_index[cards[x]].instance()
+		unit_node.add_child(Card)
+		player_node.sUnits[x] = Card
+		Card.send_self(x + 3, 9)
+		Card.stats.player = 2

@@ -15,13 +15,11 @@ var command_list = []
 func _ready():
 	connect("send_self", root_node, "link_node_to_board")
 	#print(self)
-	player_node.fUnits['1'] = self
-	send_self(0,0)
+	#player_node.fUnits['1'] = self
+	#send_self(0,0)
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_left"):
-		input_node.decide_input(Vector2(0,0))
-		input_node.decide_input(Vector2(5,5))
+	pass
 
 var stats = {
 	health = 10,

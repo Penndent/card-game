@@ -85,8 +85,8 @@ func _process(delta):
 			correction.y = yconstraintdown-corner.y
 		if correction.x != 0 || correction.y != 0:
 			corrections.append(correction)
-			print_debug("add corner correct")
-			print_debug(correction)
+			#print_debug("add corner correct")
+			#print_debug(correction)
 	
 	var isShiftAborted = false
 	var totalCorrection = Vector2(0, 0)
@@ -128,7 +128,7 @@ func _process(delta):
 	prevCorrection = totalCorrection
 	
 	if seizureCounter > 3:
-		print_debug("CALL THE EMTS")
+		#print_debug("CALL THE EMTS")
 		$Camera2D.zoom.x -= zspeed*delta
 		$Camera2D.zoom.y -= zspeed*delta
 		if $Camera2D.zoom.x < minzoom:
@@ -136,7 +136,7 @@ func _process(delta):
 			$Camera2D.zoom.y = minzoom
 	
 	if isShiftAborted:
-		print_debug("abort camera shift")
+		#print_debug("abort camera shift")
 		self.position = oPos
 		$Camera2D.zoom = oZoom
 	else:
@@ -160,10 +160,8 @@ func _draw():
 	topright = topright - self.position;
 	botleft = botleft - self.position;
 	botright = botright - self.position;
-
 	
 	var color = Color(1, 0, 0.5)
-
 	draw_circle(topleft, 10, color)
 	draw_circle(topright, 10, color)
 	draw_circle(botleft, 10, color)

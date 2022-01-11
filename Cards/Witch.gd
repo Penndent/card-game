@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends "res://Cards/Card.gd"
 var health
 var travel
 

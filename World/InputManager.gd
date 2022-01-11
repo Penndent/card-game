@@ -53,6 +53,7 @@ func move():
 	
 	fTile.unit.command_list.push_front('move')
 	
+	print(fTile.unit.stats.player)
 	# CHANGES WHERE UNIT EXISTS
 	sTile.unit = fTile.unit
 	sTile.unit_exists = true
@@ -106,9 +107,11 @@ func input_conditions(dec):
 	if fTile.unit_exists == false:
 		#TODO Visual Teller
 		tileArray.clear()
+		print('non-existent')
 		return true
 	
 	if fTile == sTile:
+		print('same tile!')
 		return true
 	
 	if abs((fTileVector.x - sTileVector.x) + (fTileVector.y - sTileVector.y)) > fTile.unit.stats.movement:
