@@ -2,18 +2,17 @@ extends "res://Input_Code/Input_Scheme_Base.gd"
 
 class_name Input_Scheme_Unit
 
+const IS_Unit_Tile = preload('res://Input_Code/Input_Scheme_Unit_Tile.gd')
 
-func _init(hist):
-	input_piece_history = hist
-	status_message = "Choose an action for this unit"
+func _init():
+	status_message = "Choose a destination tile for this unit"
 	pass
 
-func process_piece(input_piece):
+func process_piece(new_piece, history):
 	#DECIDE NEXT INPUT SCHEME
-	var next_input_scheme = null
-	
+	var next_input_scheme = IS_Unit_Tile.new()
 	
 	#CALL EXECUTORS
 	var exes = []
-	exes.append(Executor_Status.new(input_piece_history, self, next_input_scheme))
-	return Scheme_Output.new(null, exes);
+	exes.append(Executor_Status.new(history, self, next_input_scheme))
+	return Scheme_Output.new(next_input_scheme, exes);

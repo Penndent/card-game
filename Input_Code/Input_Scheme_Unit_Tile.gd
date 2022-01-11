@@ -1,16 +1,14 @@
-extends Node
+extends "res://Input_Code/Input_Scheme_Base.gd"
+
+class_name Input_Scheme_Unit_Tile
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func _init():
+	status_message = "Moving unit..."
+	pass
 
+func process_piece(new_piece, history):
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	var exes = []
+	exes.append(Executor_Move_Unit.new(history, self, null))
+	return Scheme_Output.new(null, exes);

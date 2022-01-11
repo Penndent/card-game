@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PlaceCard.mp3-01bfc51f3fa2aaca8b1e75b41ac01e52.mp3str"
+
+[deps]
+
+source_file="res://music_sounds/PlaceCard.mp3"
+dest_files=[ "res://.import/PlaceCard.mp3-01bfc51f3fa2aaca8b1e75b41ac01e52.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

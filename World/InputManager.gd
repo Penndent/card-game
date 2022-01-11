@@ -1,21 +1,26 @@
 extends Node
 
+onready var world = get_node('/root/World')
+
 enum {
 	MOVE,
 	ATTACK,
 	ABILITY,
-	NONE
+	ENDTURN
 }
 
-var state = NONE
+var state = MOVE
 var tileArray = [] #Tiles used for specific Action
 var requiredTiles = null
 
 func change_state(new_state):
 	state = new_state
+	tileArray.clear()
+	#print(state)
 
 func decide_input(tile_id):
 	take_input(tile_id)
+	#print(state)
 	match state:
 		MOVE:
 			requiredTiles = 2
@@ -25,8 +30,9 @@ func decide_input(tile_id):
 			attack()
 		ABILITY:
 			pass
-		NONE:
-			pass
+		ENDTURN:
+			requiredTiles = 0
+			#ADD ENDTURN FUNCTION
 
 #Queries
 func take_input(tile_id):
@@ -36,13 +42,19 @@ func take_input(tile_id):
 	tileArray.push_back(tile_id)
 
 func move():
-	if check_tiles() != true:
+	if input_conditions('move'):
 		return
-	
+	 
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
 	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
 	
-	#Board Data changes
+	var fTileVector = tileArray[0]
+	var sTileVector = tileArray[1]
+	
+	fTile.unit.command_list.push_front('move')
+	
+	print(fTile.unit.stats.player)
+	# CHANGES WHERE UNIT EXISTS
 	sTile.unit = fTile.unit
 	sTile.unit_exists = true
 	fTile.unit_exists = false
@@ -54,7 +66,7 @@ func move():
 	tileArray.clear()
 
 func attack():
-	if check_tiles() != true:
+	if input_conditions('attack'):
 		return
 	
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
@@ -70,6 +82,8 @@ func attack():
 	enemy_health -= player_dmg
 	sTile.unit.check_death()
 	
+	fTile.unit.command_list.push_front('attack')
+	tileArray.clear()
 	#TODO send s
 
 #Checks required Tiles and if its good, it clears query
@@ -78,3 +92,37 @@ func check_tiles():
 		return false
 	requiredTiles = null
 	return true
+
+#For 2 Tile Actions
+func input_conditions(dec):
+	if check_tiles() != true:
+		return true
+	
+	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
+	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
+	
+	var fTileVector = tileArray[0]
+	var sTileVector = tileArray[1]
+	
+	if fTile.unit_exists == false:
+		#TODO Visual Teller
+		tileArray.clear()
+		print('non-existent')
+		return true
+	
+	if fTile == sTile:
+		print('same tile!')
+		return true
+	
+	if abs((fTileVector.x - sTileVector.x) + (fTileVector.y - sTileVector.y)) > fTile.unit.stats.movement:
+		tileArray.clear()
+		print('too much movement!')
+		return true
+	
+	if world.player_turn != fTile.unit.stats.player:
+		print('not player')
+		return true
+	
+	if fTile.unit.command_list.has(dec):
+		print('command_lsit')
+		return true

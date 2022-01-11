@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/World.gd" type="Script" id=1]
 [ext_resource path="res://World/Units.gd" type="Script" id=2]
 [ext_resource path="res://World/InputManager.gd" type="Script" id=3]
-[ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/board.jpeg" type="Texture" id=6]
 [ext_resource path="res://Input_Code/Clickable Map.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Players.gd" type="Script" id=8]
+[ext_resource path="res://CameraHolder.gd" type="Script" id=9]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,29 +20,16 @@ script = ExtResource( 3 )
 [node name="Units" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="Card" parent="Units" instance=ExtResource( 4 )]
+[node name="GUI" parent="." instance=ExtResource( 5 )]
 
-[node name="Camera2D" type="Camera2D" parent="Units/Card"]
+[node name="Camera" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+offset = Vector2( 0, 40 )
 current = true
 
-[node name="simple board" type="Sprite" parent="."]
-texture = ExtResource( 6 )
+[node name="GUI" parent="." instance=ExtResource( 5 )]
 
-[node name="Knight" parent="." instance=ExtResource( 7 )]
-position = Vector2( 0, 210 )
-scale = Vector2( 0.25, 0.25 )
-
-[node name="Witch" parent="." instance=ExtResource( 9 )]
-position = Vector2( 70, 210 )
-scale = Vector2( 0.25, 0.25 )
-
-[node name="archer" parent="." instance=ExtResource( 8 )]
-position = Vector2( -70, 210 )
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 140, 210 )
-scale = Vector2( 0.25, 0.25 )
-
-[node name="Wizard" parent="." instance=ExtResource( 11 )]
-position = Vector2( -140.016, 210 )
-scale = Vector2( 0.25, 0.25 )
+[node name="Players" type="Node2D" parent="."]
+script = ExtResource( 8 )
