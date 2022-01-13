@@ -69,6 +69,7 @@ func attack():
 	if input_conditions('attack'):
 		return
 	
+	print('attacking')
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
 	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
 	
@@ -79,7 +80,9 @@ func attack():
 	var player_dmg = fTile.unit.stats.attack_dmg
 	var enemy_health = sTile.unit.stats.health
 	
-	enemy_health -= player_dmg
+	print(enemy_health)
+	sTile.unit.sub_h(player_dmg)
+	print(str(enemy_health) + ' ' + str(player_dmg))
 	sTile.unit.check_death()
 	
 	fTile.unit.command_list.push_front('attack')

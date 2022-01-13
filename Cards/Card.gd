@@ -21,8 +21,11 @@ func _ready():
 func _physics_process(delta):
 	pass
 
+func sub_h(x):
+	stats.health -= x 
+
 var stats = {
-	health = 10,
+	health = 5,
 	attack_dmg = 5,
 	movement = 3,
 	pass_thru = false,
@@ -30,7 +33,9 @@ var stats = {
 }
 
 func check_death():
+	print(stats.health)
 	if stats.health == 0:
+		print('hi!')
 		curr_board_position.unit_exists = false
 		queue_free()
 
