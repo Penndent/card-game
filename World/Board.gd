@@ -45,6 +45,7 @@ func create_board_matrix():
 #Single point victory zone
 func create_victory_zone():
 	var one_point = Vector2(board_width / 2, board_length / 2)
+	print(one_point)
 	victory_zone = one_point
 	board_matrix[one_point.x][one_point.y].king_zone = true
 

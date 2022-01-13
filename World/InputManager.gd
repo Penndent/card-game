@@ -53,6 +53,7 @@ func move():
 	
 	fTile.unit.command_list.push_front('move')
 	
+	print(fTile.unit.stats.player)
 	# CHANGES WHERE UNIT EXISTS
 	sTile.unit = fTile.unit
 	sTile.unit_exists = true
@@ -68,6 +69,7 @@ func attack():
 	if input_conditions('attack'):
 		return
 	
+	print('attacking')
 	var fTile = Board.board_matrix[tileArray[0].x][tileArray[0].y]
 	var sTile = Board.board_matrix[tileArray[1].x][tileArray[1].y]
 	
@@ -78,7 +80,9 @@ func attack():
 	var player_dmg = fTile.unit.stats.attack_dmg
 	var enemy_health = sTile.unit.stats.health
 	
-	enemy_health -= player_dmg
+	print(enemy_health)
+	sTile.unit.sub_h(player_dmg)
+	print(str(enemy_health) + ' ' + str(player_dmg))
 	sTile.unit.check_death()
 	
 	fTile.unit.command_list.push_front('attack')
@@ -106,9 +110,11 @@ func input_conditions(dec):
 	if fTile.unit_exists == false:
 		#TODO Visual Teller
 		tileArray.clear()
+		print('non-existent')
 		return true
 	
 	if fTile == sTile:
+		print('same tile!')
 		return true
 	
 	if abs((fTileVector.x - sTileVector.x) + (fTileVector.y - sTileVector.y)) > fTile.unit.stats.movement:

@@ -1,14 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World/World.gd" type="Script" id=1]
 [ext_resource path="res://World/Units.gd" type="Script" id=2]
 [ext_resource path="res://World/InputManager.gd" type="Script" id=3]
-[ext_resource path="res://Cards/Card.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/TileHighlighter.gd" type="Script" id=6]
 [ext_resource path="res://Input_Code/Clickable Map.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/Players.gd" type="Script" id=8]
-[ext_resource path="res://CameraHolder.gd" type="Script" id=9]
+[ext_resource path="res://World/CameraHolder.gd" type="Script" id=9]
+
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/greybackgroundbutbetter.png-a37e3ccdf66039310b4d73a01432dcbc.stex"
@@ -28,8 +28,6 @@ script = ExtResource( 3 )
 
 [node name="Units" type="Node2D" parent="."]
 script = ExtResource( 2 )
-
-[node name="Card" parent="Units" instance=ExtResource( 4 )]
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
 

@@ -15,16 +15,17 @@ var command_list = []
 func _ready():
 	connect("send_self", root_node, "link_node_to_board")
 	#print(self)
-	player_node.fUnits['1'] = self
-	send_self(0,0)
+	#player_node.fUnits['1'] = self
+	#send_self(0,0)
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_left"):
-		input_node.decide_input(Vector2(0,0))
-		input_node.decide_input(Vector2(5,5))
+	pass
 
-const stats = {
-	health = 10,
+func sub_h(x):
+	stats.health -= x 
+
+var stats = {
+	health = 5,
 	attack_dmg = 5,
 	movement = 3,
 	pass_thru = false,
@@ -32,7 +33,9 @@ const stats = {
 }
 
 func check_death():
+	print(stats.health)
 	if stats.health == 0:
+		print('hi!')
 		curr_board_position.unit_exists = false
 		queue_free()
 

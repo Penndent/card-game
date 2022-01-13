@@ -129,7 +129,7 @@ func _process(delta):
 	prevCorrection = totalCorrection
 	
 	if seizureCounter > 3:
-		print_debug("CALL THE EMTS")
+		#print_debug("CALL THE EMTS")
 		$Camera2D.zoom.x -= zspeed*delta
 		$Camera2D.zoom.y -= zspeed*delta
 		if $Camera2D.zoom.x < minzoom:
@@ -162,10 +162,8 @@ func _draw():
 	topright = topright - self.position;
 	botleft = botleft - self.position;
 	botright = botright - self.position;
-
 	
 	var color = Color(1, 0, 0.5)
-
 	draw_circle(topleft, 10, color)
 	draw_circle(topright, 10, color)
 	draw_circle(botleft, 10, color)
