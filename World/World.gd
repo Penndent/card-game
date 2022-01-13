@@ -54,7 +54,7 @@ func end_turn():
 	var vic = Board.victory_zone
 	var vic_board = Board.board_matrix[vic.x][vic.y]
 	if vic_board.unit_exists == true:
-		vic_board.unit.add_victory
+		vic_board.unit.add_victory()
 		print('victory added!')
 
 

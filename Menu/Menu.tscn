@@ -75,6 +75,7 @@ margin_right = 57.0
 margin_bottom = 68.0
 text = "Credits"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 [connection signal="pressed" from="VBoxContainer/Start Button" to="." method="_on_Start_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit Button" to="." method="_on_Quit_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
