@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Input_Code/Clicky.gd" type="Script" id=1]
+[ext_resource path="res://Input_Code/tiletest1.PNG" type="Texture" id=2]
 
 [node name="Clicky" type="Button"]
 margin_right = 65.0
@@ -9,4 +10,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="tiletest1" type="Sprite" parent="."]
+position = Vector2( 32.4445, 32.7239 )
+scale = Vector2( 0.0552421, 0.0552421 )
+texture = ExtResource( 2 )
+
 [connection signal="pressed" from="." to="." method="_on_Clicky_pressed"]

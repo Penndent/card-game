@@ -80,6 +80,7 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Move/Button" to="." method="_on_move_Button_pressed"]
 [connection signal="pressed" from="Attack/Button" to="." method="_on_attack_Button_pressed"]
 [connection signal="pressed" from="Ability/Button" to="." method="_on_ability_Button_pressed"]

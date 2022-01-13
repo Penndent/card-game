@@ -1,14 +1,14 @@
 extends Node2D
 
 
-var xconstraintleft = -600
-var xconstraintright = 600
-var yconstraintup = -420
-var yconstraintdown = 440
+var xconstraintleft = -900
+var xconstraintright = 900
+var yconstraintup = -540
+var yconstraintdown = 580
 
 
 var minzoom = 0.5
-var maxzoom = 1.5
+var maxzoom = 2
 
 var seizureCounter = 0
 var prevCorrection
@@ -85,8 +85,8 @@ func _process(delta):
 			correction.y = yconstraintdown-corner.y
 		if correction.x != 0 || correction.y != 0:
 			corrections.append(correction)
-			print_debug("add corner correct")
-			print_debug(correction)
+			#print_debug("add corner correct")
+			#print_debug(correction)
 	
 	var isShiftAborted = false
 	var totalCorrection = Vector2(0, 0)
@@ -110,6 +110,7 @@ func _process(delta):
 				totalCorrection.y = correction.y
 	
 	#if null instantiate with w/e
+	
 	if !prevCorrection:
 		prevCorrection = totalCorrection
 	if corrections.size() == 0:
@@ -118,7 +119,7 @@ func _process(delta):
 		var moreSeizures = 0
 		if prevCorrection.y * totalCorrection.y < -0.1:
 			moreSeizures += 1
-		if prevCorrection.x * totalCorrection.x < -0.1:
+		elif prevCorrection.x * totalCorrection.x < -0.1:
 			moreSeizures += 1
 		if moreSeizures != 0:
 			seizureCounter += moreSeizures
@@ -134,9 +135,10 @@ func _process(delta):
 		if $Camera2D.zoom.x < minzoom:
 			$Camera2D.zoom.x = minzoom
 			$Camera2D.zoom.y = minzoom
+		seizureCounter = 0
 	
 	if isShiftAborted:
-		print_debug("abort camera shift")
+		#print_debug("abort camera shift")
 		self.position = oPos
 		$Camera2D.zoom = oZoom
 	else:

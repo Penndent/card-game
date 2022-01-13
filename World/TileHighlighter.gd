@@ -19,7 +19,7 @@ func _process(delta):
 
 
 func _draw():
-	#print_debug("attempting draw")
+	print_debug("attempting draw")
 	for i in range(tileList.size()):
 		draw_rect(frame[i], colors[i])
 	pass

@@ -1,6 +1,7 @@
 extends Node2D
 
 var ind_button = preload("res://Input_Code/Clicky.tscn")
+var button_image = preload("res://Assets/round wizard.png")
 
 func _ready():
 	for x in range(Board.board_width):
